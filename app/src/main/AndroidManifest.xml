@@ -29,7 +29,6 @@
         <receiver android:name=".widget.BakingWidgetProvider" android:icon="@drawable/ic_art_track_black_36dp">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE2" />
             </intent-filter>
 
             <meta-data

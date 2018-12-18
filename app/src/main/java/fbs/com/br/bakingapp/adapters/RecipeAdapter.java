@@ -25,7 +25,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecyclerVi
     }
 
     public RecipeAdapter(ListItemClickListener listener) {
-        listItemClickListener =listener;
+        listItemClickListener = listener;
     }
 
 

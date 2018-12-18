@@ -24,7 +24,7 @@ public class BakingWidgetProvider extends AppWidgetProvider {
         Intent appIntent = new Intent(context, RecipeDetailActivity.class);
         appIntent.addCategory(Intent.ACTION_MAIN);
         appIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-        appIntent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        appIntent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT|Intent.FLAG_ACTIVITY_SINGLE_TOP);
         PendingIntent appPendingIntent = PendingIntent.getActivity(context, 0, appIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         views.setPendingIntentTemplate(R.id.widget_grid_view, appPendingIntent);
 
@@ -59,7 +59,7 @@ public class BakingWidgetProvider extends AppWidgetProvider {
 
         final String action = intent.getAction();
 
-           if (action.equals("android.appwidget.action.APPWIDGET_UPDATE2")) {
+           if ("android.appwidget.action.APPWIDGET_UPDATE".equals(action)) {
                ingredientsList = intent.getExtras().getStringArrayList(FROM_ACTIVITY_INGREDIENTS_LIST);
                appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.widget_grid_view);
                BakingWidgetProvider.updateBakingWidgets(context, appWidgetManager, appWidgetIds);
@@ -68,4 +68,3 @@ public class BakingWidgetProvider extends AppWidgetProvider {
     }
 
 }
-
