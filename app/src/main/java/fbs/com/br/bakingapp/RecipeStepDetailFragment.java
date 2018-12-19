@@ -38,6 +38,7 @@ import java.util.List;
 import fbs.com.br.bakingapp.model.Recipe;
 import fbs.com.br.bakingapp.model.Step;
 import static fbs.com.br.bakingapp.RecipeDetailActivity.SELECTED_INDEX;
+import static fbs.com.br.bakingapp.RecipeDetailActivity.SELECTED_RECIPES;
 import static fbs.com.br.bakingapp.RecipeDetailActivity.SELECTED_STEPS;
 
 public class RecipeStepDetailFragment extends Fragment {
@@ -89,7 +90,7 @@ public class RecipeStepDetailFragment extends Fragment {
                 mRecipeName = getArguments().getString("Title");
             }
             else {
-                mRecipe = getArguments().getParcelableArrayList(SELECTED_STEPS);
+                mRecipe = getArguments().getParcelableArrayList(SELECTED_RECIPES);
                 mSteps = (ArrayList<Step>) (mRecipe != null ? mRecipe.get(0).getSteps() : null);
                 mSelectedIndex =0;
             }
@@ -129,7 +130,7 @@ public class RecipeStepDetailFragment extends Fragment {
                 textView.setVisibility(View.GONE);
             }
         } else {
-            mPlayer =null;
+            mPlayer = null;
             mSimpleExoPlayerView.setForeground(ContextCompat.getDrawable(getContext(), R.drawable.ic_visibility_off_white_36dp));
             mSimpleExoPlayerView.setLayoutParams(new LinearLayout.LayoutParams(300, 300));
         }
